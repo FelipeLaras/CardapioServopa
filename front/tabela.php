@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <?php
 session_start();
 
 require_once('../config/conexao.php');
-require_once('query.php');
+require_once('../inc/query.php');
 
 //Tabela
 $queryTabela .= $_GET['filial'];
@@ -22,6 +22,8 @@ $resultRefeicaoChef = $conn->query($queryRefeicaoChef);
 //Dia de Hoje
 $dia = date('d');
 
+$mes = date('M');
+
 //ID para enviar por e-mail
 $_SESSION['id_filial'] = $_GET['filial'];
 
@@ -31,12 +33,12 @@ $_SESSION['id_filial'] = $_GET['filial'];
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Cardápio</title>
+  <title>Cardápio <?= $tabela['nome'] ?></title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/favicon.ico" rel="icon">
   <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="../assets/fontawesome-free-5.15.1/css/all.css" rel="stylesheet">
 
@@ -84,7 +86,7 @@ $_SESSION['id_filial'] = $_GET['filial'];
         <div class="d-flex justify-content-between align-items-center">
           <ol>
             <li><a href="../index.php">Home</a></li>
-            <li>Cardápio Janeiro</li>
+            <li>Cardápio <?= $mes ?></li>
           </ol>
         </div>
 

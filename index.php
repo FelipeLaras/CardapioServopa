@@ -1,8 +1,5 @@
 <?php
-/* Informa o nível dos erros que serão exibidos */
-error_reporting(E_ALL);
- 
-/* Habilita a exibição de erros */
+error_reporting(E_ALL); 
 ini_set("display_errors", 0);
 
 require_once('front/front.php');
