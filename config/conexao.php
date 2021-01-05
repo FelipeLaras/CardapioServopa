@@ -1,10 +1,10 @@
 ﻿<?php
     //variaveis para conexao
-    $servername = "10.100.1.65";
-    $username = "rizzo";
-    $password = "Rizzo123#";
-    $dbname = "cardapio";
-    $port = "3306";
+    $servername = "******";
+    $username = "******";
+    $password = "******";
+    $dbname = "******";
+    $port = "******";
 
 $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 

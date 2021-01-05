@@ -212,7 +212,7 @@ $_SESSION['id_filial'] = $_GET['filial'];
         </div>
 
         <div class="col-lg-8 mt-5 mt-lg-0">
-          <form method="post" Class="php-email-form" action="email.php">
+          <form method="post" Class="php-email-form" action="../inc/email.php">
             <div class="form-group">
               <input type="text" class="form-control" name="nome" id="subject" placeholder="Nome" required>
             </div>

@@ -6,11 +6,11 @@ session_start();
 	require_once('../PHPMailer/PHPMailerAutoload.php');
 	
 	//variaveis de conf. envio
-	$smtp = "smtp.gmail.com";//servidor usado para envio
-	$porta = "465"; //porta padrão SSL
-	$login_email = "apoio.sistemas@gruposervopa.com.br"; //usuario para o login do SMTP
-	$senha_email = "tiservopa123"; //senha para o login ao SMTP
-	$destinatario = "felipe.lara@servopa.com.br";//O mail que receberá as msn
+	$smtp = "******";//servidor usado para envio
+	$porta = "******"; //porta padrão SSL
+	$login_email = "******"; //usuario para o login do SMTP
+	$senha_email = "******"; //senha para o login ao SMTP
+	$destinatario = "******";//O mail que receberá as msn
 	$titulo_email = "Comentario Cardapio";
 
 	//Criando o corpo da mensagem.
@@ -88,7 +88,7 @@ session_start();
 	$Mailer->AddAddress($destinatario);
 	
 	if($Mailer->Send()){
-		header('location: tabela.php?filial='.$_SESSION['id_filial'].'&msn=1#contact');
+		header('location: ../front/tabela.php?filial='.$_SESSION['id_filial'].'&msn=1#contact');
 	}else{
 		echo "Erro no envio do e-mail: " . $Mailer->ErrorInfo;
 	}
