@@ -1,6 +1,6 @@
 <?php
     //home
-    $queryHome = "SELECT nome, id_empresa FROM empresa WHERE home = 1 and deletar = 0";
+    $queryHome = "SELECT nome, id_empresa FROM empresa WHERE home = 1 AND deletar = 0 AND id_empresa NOT IN (54,60);";
     $resultHome = $conn->query($queryHome);
 
     //departamento
@@ -15,7 +15,7 @@
     $queryTabela = "SELECT id_empresa, nome FROM empresa WHERE deletar = 0 AND id_empresa =";
 
     //refeição principal
-    $queryRefeicaoPrincipal = "SELECT * FROM cardapio.reifeicao_principal WHERE  deletar = 0 AND filial = ";
+    $queryRefeicaoPrincipal = "SELECT * FROM cardapio.refeicao_principal WHERE  deletar = 0 AND filial = ";
 
     //refeição chef
     $queryRefeicaoChef = "SELECT * FROM cardapio.refeicao_chef WHERE deletar = 0 AND filial = ";

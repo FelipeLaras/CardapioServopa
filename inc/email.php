@@ -6,11 +6,14 @@ session_start();
 	require_once('../PHPMailer/PHPMailerAutoload.php');
 	
 	//variaveis de conf. envio
-	$smtp = "******";//servidor usado para envio
-	$porta = "******"; //porta padrão SSL
-	$login_email = "******"; //usuario para o login do SMTP
-	$senha_email = "******"; //senha para o login ao SMTP
-	$destinatario = "******";//O mail que receberá as msn
+	$smtp = "smtp.gmail.com";//servidor usado para envio
+	$porta = "465"; //porta padrão SSL
+	$login_email = "apoio.sistemas@gruposervopa.com.br"; //usuario para o login do SMTP
+	$senha_email = "tiservopa123"; //senha para o login ao SMTP
+	//$destinatario = "felipe.lara@servopa.com.br";//O mail que receberá as msn
+	$destinatario = "simoned@servopa.com.br";//O mail que receberá as msn
+	$destinatario2 = "UNOP6554@grsa.com.br";
+	$destinatario3 = "heverton.camargo@servopa.com.br";
 	$titulo_email = "Comentario Cardapio";
 
 	//Criando o corpo da mensagem.
@@ -23,7 +26,7 @@ session_start();
 				</style>
 			</head>';
 	$corpo .= '<div id="tabela">
-				<h1>Comentário Cardário do Mês</h1>';
+				<h1>Comentário Cardápio do Mês</h1>';
 	$corpo .='<table border="1">
 				<tr>
 					<th>Nome</th>
@@ -86,9 +89,13 @@ session_start();
 	
 	//Destinatario 
 	$Mailer->AddAddress($destinatario);
+
+	$Mailer->addCC($destinatario2);
+
+	$Mailer->addBCC($destinatario3);
 	
 	if($Mailer->Send()){
-		header('location: ../front/tabela.php?filial='.$_SESSION['id_filial'].'&msn=1#contact');
+		header('location: tabela.php?filial='.$_SESSION['id_filial'].'&msn=1#contact');
 	}else{
 		echo "Erro no envio do e-mail: " . $Mailer->ErrorInfo;
 	}
